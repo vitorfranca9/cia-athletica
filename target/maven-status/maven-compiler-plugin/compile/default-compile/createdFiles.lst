@@ -1,0 +1,10 @@
+br/com/ative/ciaathletica/entity/Teste.class
+br/com/ative/ciaathletica/service/TesteService.class
+br/com/ative/ciaathletica/CiaAthleticaApplication.class
+br/com/ative/ciaathletica/controller/TesteController.class
+br/com/ative/ciaathletica/dao/CiaAthleticaJdbcTemplate.class
+br/com/ative/ciaathletica/entity/IEntity.class
+br/com/ative/ciaathletica/ServletInitializer.class
+br/com/ative/ciaathletica/dao/CiaAthleticaDAOImpl.class
+br/com/ative/ciaathletica/service/TesteServiceImpl.class
+br/com/ative/ciaathletica/dao/CiaAthleticaDAO.class
