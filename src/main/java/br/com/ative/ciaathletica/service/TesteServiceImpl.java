@@ -5,21 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.ative.ciaathletica.dao.CiaAthleticaDAO;
+import br.com.ative.ciaathletica.dao.IEntityDAO;
 import br.com.ative.ciaathletica.entity.Teste;
 
 @Service("testeService")
 public class TesteServiceImpl implements TesteService {
-
-//	@Autowired
-//	private CiaAthleticaJdbcTemplate template;
 	
 	@Autowired
-	private CiaAthleticaDAO entityDAO;
+	private IEntityDAO entityDAO;
 	
 	@Override
 	public void select() {
-//		template.select();
 		List<Teste> testes = entityDAO.findAll(Teste.class);
 		System.out.println(testes);
 	}
@@ -30,8 +26,16 @@ public class TesteServiceImpl implements TesteService {
 		teste.setId(2);
 		teste.setNome(name);
 		teste.setDescricao(name);
-		entityDAO.salvar(teste);
-		System.out.println("cole");
+		entityDAO.save(teste);
+	}
+
+	@Override
+	public void remover(String name) {
+		Teste teste = new Teste();
+		teste.setId(2);
+		teste.setNome(name);
+		teste.setDescricao(name);
+		entityDAO.remove(teste.getClass(),teste.getId());
 	}
 
 }

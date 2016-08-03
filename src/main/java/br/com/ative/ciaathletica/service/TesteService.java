@@ -5,5 +5,7 @@ public interface TesteService {
 	void select();
 
 	void incluir(String name);
+
+	void remover(String name);
 	
 }

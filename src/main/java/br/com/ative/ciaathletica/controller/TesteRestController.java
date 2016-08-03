@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.ative.ciaathletica.service.TesteService;
 
 @RestController
-public class TesteController {
+public class TesteRestController {
 
 	@Autowired
 	private TesteService testeService;
@@ -33,7 +33,7 @@ public class TesteController {
 	
 	@RequestMapping("remover/{name}")
 	public String remover(@PathVariable String name) {
-		testeService.incluir(name);
+		testeService.remover(name);
 		return "Oi " +name;
 	}
 	
