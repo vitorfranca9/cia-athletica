@@ -27,20 +27,14 @@ public class TesteRestController {
 	
 	@RequestMapping("incluir/{name}")
 	public String incluir(@PathVariable String name) {
-		testeService.incluir(name);
+		testeService.save(name);
 		return "Oi " +name;
 	}
 	
-	@RequestMapping("remover/{name}")
-	public String remover(@PathVariable String name) {
-		testeService.remover(name);
-		return "Oi " +name;
-	}
-	
-	@RequestMapping("iae/{name}")
-	public String iae(@PathVariable String name) {
-//		testeService.remover(name);
-		return "Iae " +name;
+	@RequestMapping("remover/{id}")
+	public String remover(@PathVariable Integer id) {
+		testeService.remover(id);
+		return "Oi " +id;
 	}
 	
 }

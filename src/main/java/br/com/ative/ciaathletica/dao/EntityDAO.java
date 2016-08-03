@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.ative.ciaathletica.entity.IEntity;
-import br.com.ative.ciaathletica.entity.Teste;
 
+//bean?
 @Service("entityDAO")
 public class EntityDAO implements IEntityDAO {
 
@@ -27,6 +27,7 @@ public class EntityDAO implements IEntityDAO {
 	@Transactional
 	@Override
 	public <T extends IEntity> void save(T entity) {
+//		TODO - try catch - SQLException
 		if (entity.getId() == null) {
 			entityManager.persist(entity);
 		} else {
@@ -37,8 +38,13 @@ public class EntityDAO implements IEntityDAO {
 	@Transactional
 	@Override
 	public <T extends IEntity> void remove(Class<T> clazz, Integer id) {
-		T entity = entityManager.find(clazz, id);
+		T entity = find(clazz,id);
 		entityManager.remove(entity);
+	}
+
+	@Override
+	public <T extends IEntity> T find(Class<T> clazz, Integer id) {
+		return entityManager.find(clazz, id);
 	}
 
 }

@@ -8,4 +8,5 @@ public interface IEntityDAO {
 	<T extends IEntity> List<T> findAll(Class<T> clazz);
 	<T extends IEntity> void save(T object);
 	<T extends IEntity> void remove(Class<T> clazz, Integer id);
+	<T extends IEntity> T find(Class<T> clazz, Integer id);
 }
